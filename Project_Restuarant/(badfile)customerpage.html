@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="mystyleforcustomer.css">
+</head>
+ <body style="background-image: url(images/background.jpg);"> 
+
+
+<h1 style="color:Black;text-align:center;"> <i>WELCOME TO OUR WEBSITE<i> </h1>
+
+
+<div class="selectlocation">
+  <button class="selectbtn">Select Location</button>
+  <div class="selectlocation-content">
+    <a href="#">Location 1</a>
+    <a href="#">Location 2</a>
+    <a href="#">Location 3</a>
+  </div>
+</div>
+
+
+
+
+
+<div1>
+<style>
+.button {
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  text-align: right;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button1 {background-color: black;} 
+.button2 {background-color: black;} 
+</style>
+
+<button class="button button1">Log Out</button>
+<button class="button button2">Change Password</button>
+</div1>
+<div>
+<h1 style="color:Black;text-align:center;"> <i>MENU<i> </h1>
+</div>
+<div>
+<body>
+
+<?php
+
+      $user="root";
+      $pass="";
+      $server="localhost";
+      $db="restaurant";
+
+      $con=new mysqli($server,$user,$pass,$db) ;
+
+      if($con->connect_error)
+      {
+        die("connection failed".$con->error);
+      }
+
+      $query="SELECT *FROM FOOD WHERE Subtype='Starter'";
+      $result=mysqli_query($con,$query);
+
+      if($result):
+          if(mysqli_num_rows($result)>0):
+
+
+?>
+<h1>Starter</h1>
+<form>
+  <input type="checkbox" id="Starter1" name="Starter1" value="Starter1">
+  <label for="Starter1"> Starter1</label><br>
+  <input type="checkbox" id="Starter2" name="Starter2" value="Starter2">
+  <label for="Starter2"> Starter2</label><br>
+  <input type="checkbox" id="Starter3" name="Starter3" value="Starter3">
+  <label for="Starter3"> Starter3</label><br><br>
+  <input type="submit" value="Submit">
+</form>
+
+
+<h1>MainCourse</h1>
+<form>
+  <input type="checkbox" id="MainCourse1" name="MainCourse1" value="MainCourse1">
+  <label for="MainCourse1"> MainCourse1</label><br>
+  <input type="checkbox" id="MainCourse2" name="MainCourse2" value="MainCourse2">
+  <label for="MainCourse2"> MainCourse2</label><br>
+  <input type="checkbox" id="MainCourse3" name="MainCourse3" value="MainCourse3">
+  <label for="MainCourse3"> MainCourse3</label><br><br>
+  <input type="submit" value="Submit">
+</form>
+
+<h1>Brevarage</h1>
+<form>
+  <input type="checkbox" id="Brevarage1" name="Brevarage1" value="Brevarage1">
+  <label for="Brevarage1"> Brevarage1</label><br>
+  <input type="checkbox" id="Brevarage2" name="Brevarager2" value="Brevarage2">
+  <label for="Brevarage2"> Brevarage2</label><br>
+  <input type="checkbox" id="Brevarage3" name="Brevarage3" value="Brevarage3">
+  <label for="Brevarage3"> Brevarage3</label><br><br>
+  <input type="submit" value="Submit">
+</form>
+
+
+<h1>Dessert</h1>
+<form>
+  <input type="checkbox" id="Dessert1" name="Dessert1" value="Dessert1">
+  <label for="Dessert1"> Dessert1</label><br>
+  <input type="checkbox" id="Dessert2" name="Dessert2" value="Dessert2">
+  <label for="Dessert2"> Dessert2</label><br>
+  <input type="checkbox" id="Dessert3" name="Dessert3" value="Dessert3">
+  <label for="Dessert3"> Dessert3</label><br><br>
+  <input type="submit" value="Submit">
+</form>
+
+</body>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #ffffcc;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(odd) {
+  background-color: #ffffcc;
+}
+tr:nth-child(even) {
+  background-color: #ffffcc;
+}
+</style>
+</head>
+<body>
+<div>
+<h2 style="color:black;text-align:center;">ORDERED ITEM</h2>
+
+<table>
+ 
+  <tr>
+    <td>Item1   </td>
+    <td>ORIGIN1</td>
+    <td>Price1</td>
+  </tr>
+  <tr>
+    <td>Item2   </td>
+    <td>ORIGIN2</td>
+    <td>price2</td>
+  </tr>
+  <tr>
+    <td>Item3   </td>
+    <td>ORIGIN3</td>
+    <td>Price3</td>
+  </tr>
+  <tr>
+    <td>Item4   </td>
+    <td>ORIGIN4</td>
+    <td>Price4</td>
+  </tr>
+  <tr>
+	<td>Total Price</td>
+	<td style="color:#ffffcc;">-</td>
+	<td>Price</td>
+</tr>
+</table>
+
+
+<div>
+<input type="submit" value="Submit">
+</div>
+
+
+
+  <fieldset>
+    <legend>Seat:</legend>
+<form>
+  <input type="checkbox" id="MainCourse1" name="MainCourse1" value="MainCourse1">
+  <label for="MainCourse1"> MainCourse1</label><br>
+  <input type="checkbox" id="MainCourse2" name="MainCourse2" value="MainCourse2">
+  <label for="MainCourse2"> MainCourse2</label><br>
+  <input type="checkbox" id="MainCourse3" name="MainCourse3" value="MainCourse3">
+  <label for="MainCourse3"> MainCourse3</label><br><br>
+  <input type="submit" value="Submit">
+</form>
+
+  </fieldset>
+
+    <div id="footer"> Do you Have a FeedBack? <a href="http://www.a restaurent.com">Our Restaurant.com</a> 2020/5/17</em> 
+</div>
+</div>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
