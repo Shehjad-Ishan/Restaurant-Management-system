@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<?php
+ $db = mysqli_connect('localhost', 'name', 'myProject')
+ or die('Error connecting to MySQL server.');
+?>
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+
+</head>
+<body style="background-image: url(images/background.jpg);">
+
+
+
+<h1 style="color:black;text-align:center;"> <i>RESTAURANT NAME</i> </h1>
+<div>
+<p style="color:black;"> Not decided yet </p>
+</div>
+<?php
+$list = "SELECT name FROM branch";
+
+mysqli_list($db, $list) or die('Error quering database.');
+?>
+
+<br>
+<br>
+<!--
+<div>
+<h3 style:"color=blue;"><b>SELECT LOCATION</b></h3>
+
+<p1>Selected location will redirect you to the corresponding brunch hompage</p1>
+<br>
+
+<label for="locations">Choose your location:</label>
+
+<select name="locations">
+<?php
+$list = mysqli_query($db,"SELECT name FROM `branch`");
+while ($row = mysqli_fetch_assoc($list)) {
+
+<option value="<?php echo $row['name']"></option>
+<?php 
+} 
+?>
+  
+</select>
+</div>
+
+<div class="clearfix">
+<button type="done" class="donebutton">Done</button>
+</div>
+
+-->
+
+<!--Sign In-->
+
+<form action="home_page.php" method="post">
+<div class="container">
+<h3>Log In</h3>
+
+<label for="username"><a>Username</a></label>
+<br>
+<input type="text" placeholder="Enter Username" id="username" name="username" required>
+<br>
+<label for="password"><a>Password</a></label><br>
+<input type="password" placeholder="Enter Password" id="username"name="password" required> <br> <br>
+
+<!--Login as Customer or Manager-->
+
+<label for="LogInAs">Log In As:</label>
+<select id="LogInAs" Name="log">
+  <option value="Null" selected> </option>
+  <option value="Customer">Customer</option>
+  <option value="Manager">Manager</option>
+</select>
+</div>
+<div class="clearfix">
+ <input type="submit" value="Login">
+<input type="reset" value="Cancel">
+</div>
+</form>
+<div>
+<br>
+<p2 style="color:red;">Not Registered? Then sign up <p2/>
+</div>
+
+
+
+<form action="homepage_Signup.php" method="post">
+<div class="container">
+
+<h3>Sign Up</h3>
+<label for="username"><a>Username</a></label>
+<br>
+<input type="text" placeholder="Enter Username" name="username" required>
+<br>
+<label for="address"><a>Address</a></label>
+<br>
+<input type="address" placeholder="Enter Address" name="address" required>
+<br>	
+<label for="password"><a>Password</a></label>
+<br>
+<input type="password" placeholder="Enter Password" name="password" required>
+<br>
+<label for="password-repeat"><a>Repeat Password</a></label>
+<br>
+<input type="password" placeholder="Repeat Password" name="password_repeat" required>
+<br>
+    
+<input type="submit" value="Submit">
+<input type="reset" value="Cancel">
+</form>
+  
+
+</div>
+<br>
+<br>
+ 
+
+  
+
+</body>
+</html>
